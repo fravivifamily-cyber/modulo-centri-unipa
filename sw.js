@@ -1,4 +1,4 @@
-const CACHE_NAME = "calcolo-orari-pwa-v1";
+const CACHE_NAME = "calcolo-orari-pwa-v2";
 const ASSETS = [
   "./",
   "./index.html",
@@ -29,7 +29,6 @@ self.addEventListener("fetch", (event) => {
     caches.match(req).then((cached) => {
       if (cached) return cached;
       return fetch(req).then((res) => {
-        // Cache only basic GET requests
         if (req.method === "GET" && res && res.status === 200 && res.type === "basic") {
           const copy = res.clone();
           caches.open(CACHE_NAME).then((cache) => cache.put(req, copy));

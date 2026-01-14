@@ -183,7 +183,6 @@
   </style>
 
   <link rel="manifest" href="manifest.webmanifest">
-  <meta name="mobile-web-app-capable" content="yes" />
   <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
@@ -515,7 +514,6 @@ function resetCampi2() {
   </script>
 
   <script>
-    // Registrazione Service Worker (necessario per PWA installabile)
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {
         navigator.serviceWorker.register("./sw.js").catch(() => {});
